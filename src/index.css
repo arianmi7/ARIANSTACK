@@ -1,0 +1,72 @@
+@import "tailwindcss";
+@import "@fontsource-variable/vazirmatn";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --page: #F4F7FC;
+  --card: #FFFFFF;
+  --soft: #F1F5FB;
+  --line: #DDE5F0;
+  --main: #0F1B33;
+  --muted: #5E6B82;
+  --brand: #2563EB;
+  --brand2: #0EA5E9;
+  --glow: rgba(37, 99, 235, 0.35);
+  --header: rgba(244, 247, 252, 0.85);
+  --code-bg: #0F1B33;
+  --code-text: #BFD4FF;
+  --hero-glow: #DCEBFF;
+}
+
+.dark {
+  --page: #050508;
+  --card: #0B1020;
+  --soft: #0E1530;
+  --line: rgba(255, 255, 255, 0.1);
+  --main: #F5F7FA;
+  --muted: #8B95A7;
+  --brand: #60A5FA;
+  --brand2: #22D3EE;
+  --glow: rgba(96, 165, 250, 0.5);
+  --header: rgba(5, 5, 8, 0.85);
+  --code-bg: #070B18;
+  --code-text: #7DD3FC;
+  --hero-glow: #0A1A40;
+}
+
+@theme inline {
+  --color-page: var(--page);
+  --color-card: var(--card);
+  --color-soft: var(--soft);
+  --color-line: var(--line);
+  --color-main: var(--main);
+  --color-muted: var(--muted);
+  --color-brand: var(--brand);
+  --color-brand2: var(--brand2);
+  --color-header: var(--header);
+  --color-code: var(--code-bg);
+  --color-codetext: var(--code-text);
+  --color-heroglow: var(--hero-glow);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Vazirmatn Variable', sans-serif;
+  background-color: var(--page);
+  color: var(--main);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
